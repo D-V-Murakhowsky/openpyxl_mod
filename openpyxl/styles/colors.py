@@ -58,7 +58,8 @@ class RGB(Typed):
         if not self.allow_none:
             m = aRGB_REGEX.match(value)
             if m is None:
-                raise ValueError("Colors must be aRGB hex values")
+                m = '00000000'
+                # raise ValueError("Colors must be aRGB hex values")
             if len(value) == 6:
                 value = "00" + value
         super(RGB, self).__set__(instance, value)
